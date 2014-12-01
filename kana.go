@@ -67,7 +67,7 @@ func do(s string) {
 				continue
 			}
 			// Otherwise it's just odd.
-			fmt.Printf("<%s.%s>", k, k2)
+			fmt.Printf("<%s.%s>", k, odd[r2])
 			continue
 		}
 		fmt.Printf("%s", k)
@@ -232,26 +232,26 @@ var small = map[rune]bool{
 	'ぅ': true,
 	'ぇ': true,
 	'ぉ': true,
-	'っ': true, // tsu == hold consonant
+	'っ': true,
 	'ゃ': true,
 	'ゅ': true,
 	'ょ': true,
 	'ゎ': true,
-	'ゕ': true, // ka == counting mark
-	'ゖ': true, // ke == counting mark
+	'ゕ': true,
+	'ゖ': true,
 
 	'ァ': true,
 	'ィ': true,
 	'ゥ': true,
 	'ェ': true,
 	'ォ': true,
-	'ッ': true, // tsu == hold consonant
+	'ッ': true,
 	'ャ': true,
 	'ュ': true,
 	'ョ': true,
 	'ヮ': true,
-	'ヵ': true, // ka == counting mark
-	'ヶ': true, // ke == counting mark
+	'ヵ': true,
+	'ヶ': true,
 }
 
 var vowel = map[rune]string{
@@ -276,4 +276,13 @@ var mod = map[rune]string{
 	'ャ': "ya",
 	'ュ': "yu",
 	'ョ': "yo",
+}
+
+var odd = map[rune]string{
+	'っ': "hold",  // tsu == hold consonant
+	'ゕ': "count", // ka == counting mark
+	'ゖ': "count", // ke == counting mark
+	'ッ': "hold",  // tsu == hold consonant
+	'ヵ': "count", // ka == counting mark
+	'ヶ': "count", // ke == counting mark
 }
